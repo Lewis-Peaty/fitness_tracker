@@ -1,6 +1,12 @@
 from django.db import models
 from datetime import datetime
 
+LEWIS = "Lewis Peaty"
+NAME_CHOICES = (
+    (LEWIS , "Lewis"),
+)
+    
+
 # Create your models here.
 class Greeting(models.Model):
     when = models.DateTimeField('date created', auto_now_add=True)
@@ -17,7 +23,6 @@ class Workout(models.Model):
     CARDIO = "CRD"
     CHEST = "CHT"
     
-    LEWIS = "Lewis Peaty"
     
     WORKOUT_CHOICES = (
         (ARMS , "Arms"),
@@ -29,10 +34,6 @@ class Workout(models.Model):
         (CUSTOM , "Custom"),
         (CARDIO , "Cardio"),
         (CHEST , 'Chest'),
-    )
-    
-    NAME_CHOICES = (
-        (LEWIS , "Lewis"),
     )
     
     name = models.CharField('your name',choices = NAME_CHOICES, default=LEWIS, max_length = 30)
@@ -51,4 +52,51 @@ class Workout(models.Model):
     # def create(cls,value):
     #     point = cls(value=value)
     #     return point
+    
+    
+    
+    
+    
+class Food(models.Model):
+    FRUIT = "Fruit"
+    COFFEE = "Coffee"
+    SALAD = "Salad"
+    PASTRY = "Pastry"
+    RICE = "Rice"
+    NOODLES = "Noodles"
+    OTHER = "Other"
+    BEER = "Beer"
+    MEAT = "Meat"
+    FISH = "Fish"
+    BURG = "Sandwich/Burger"
+    NUTS = "Nuts-TrailMix"
+    DURIAN = "Durian Fruit Oh No"
+    DESSERT = "Dessert"
+    
+    FOOD_CHOICES = (
+        (FRUIT , "Fruit"),
+        (COFFEE , "Coffee"),
+        (SALAD , "Salad"),
+        (PASTRY , "Pastry"),
+        (RICE , "Rice"),
+        (NOODLES , "Noodles"),
+        (OTHER , "Other"),
+        (BEER , "Beer"),
+        (MEAT , "Meat"),
+        (FISH , "Fish"),
+        (BURG , "Sandwich/Burger"),
+        (NUTS , "Nuts-TrailMix"),
+        (DURIAN , "Durian Fruit Oh No"),
+        (DESSERT , "Dessert"),
+    )    
+    
+    
+    name = models.CharField('your name',choices = NAME_CHOICES, default=LEWIS, max_length = 30)
+    time_stamp = models.DateTimeField('time stamp',default=datetime.now, blank=True)
+    quantity = models.DecimalField(decimal_places=1,max_digits=3,default=1)
+    food = models.CharField(
+        max_length = 30,
+        choices = FOOD_CHOICES,
+        default=COFFEE
+    )
     

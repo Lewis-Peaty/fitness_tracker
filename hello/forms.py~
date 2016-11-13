@@ -1,7 +1,7 @@
 from django import forms, utils
 from django.db import models
 from django.forms import ModelForm
-from .models import Workout, Food
+from .models import Workout
 
 WORKOUT_CHOICES = (
     ('Arms','Custom','Legs','Shoulders','Core','Back','BitsNBops','Cardio','Chest')                            

@@ -29,7 +29,7 @@ def db(request):
     return render(request, 'db.html', {'greetings': greetings})
 
 
-#Gym day views
+#WORKOUTS!
 def get_all_workouts(request):
     workouts = Workout.objects.all()
     template = loader.get_template('get_all_workouts.html')
@@ -56,5 +56,60 @@ def add_workout(request):
         form = WorkoutForm()
 
     return render(request, 'new_workout.html', {'form': form})
+    
+def remove_workout(request):
+    Workout.objects.latest('time_stamp').delete()
+    return HttpResponseRedirect('/get_all_workouts')
+        
+        
+        
+#FOOD!
+def get_all_food(request):
+    food = Workout.objects.all()
+    template = loader.get_template('get_all_food.html')
+    context = {
+        'food' : food,
+    }
+    return HttpResponse(template.render(context,request))
 
+def add_workout(request):
+   # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = WorkoutForm(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+            # ...
+            # redirect to a new URL:
+            form.save()
+            return HttpResponseRedirect('/get_all_food')
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = WorkoutForm()
+
+    return render(request, 'new_workout.html', {'form': form})
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         

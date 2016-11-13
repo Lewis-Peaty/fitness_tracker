@@ -1,0 +1,44 @@
+<style>
+
+    input {
+        width: 100%;
+        height: 10%;
+        font-size: 200%;
+    }
+    
+    th{
+        height: 50px;
+        font-size: 100%;
+    }
+</style>
+
+{% load static %}
+<form action="/add_food" method="get">
+    <input type="submit" value="Add Food" />
+</form>
+<form action="/remove_food" method="get">
+    <input type="submit" value="Remove Last Food" />
+</form>
+
+{% if foods %}
+<table style="width:100%">
+<tr>
+    <th>Name</th>
+    <th>Time Stamp</th>
+    <th>Workout Type</th>
+    <th>Number Of Exercises</th>
+    <th>Average # Of Sets</th>
+    <th>Est Total Sets</th>
+</tr>
+{% for food in foods %}
+<tr>
+    <th>{{food.name}}</th>
+    <th>{{food.time_stamp}}</th>
+    <th>{{food.food}}</th>
+    <th>{{food.quantity}}</th>
+</tr>
+{% endfor %}
+</table>
+{% else %}
+    <p>No foods are available.</p>
+{% endif %}
