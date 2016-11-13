@@ -2,7 +2,7 @@
 
     input {
         width: 100%;
-        height: 10%;
+        height: 100%;
         font-size: 200%;
     }
     
@@ -13,22 +13,31 @@
 </style>
 
 {% load static %}
+<table style="width:100%;height:20%">
+<th>
 <form action="/add_food" method="get">
     <input type="submit" value="Add Food" />
 </form>
+</th>
+<th>
 <form action="/remove_food" method="get">
     <input type="submit" value="Remove Last Food" />
 </form>
-
+</th>
+<th>
+<form action="/" method="get">
+    <input type="submit" value="Home" />
+</form>
+</th>
+</table>
 {% if foods %}
 <table style="width:100%">
 <tr>
     <th>Name</th>
     <th>Time Stamp</th>
-    <th>Workout Type</th>
-    <th>Number Of Exercises</th>
-    <th>Average # Of Sets</th>
-    <th>Est Total Sets</th>
+    <th>Food</th>
+    <th>Quantity</th>
+
 </tr>
 {% for food in foods %}
 <tr>

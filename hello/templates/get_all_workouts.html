@@ -13,13 +13,23 @@
 </style>
 
 {% load static %}
+<table style="width:100%">
+<th>
 <form action="/add_workout" method="get">
     <input type="submit" value="Add Workout" />
 </form>
+</th>
+<th>
 <form action="/remove_workout" method="get">
     <input type="submit" value="Remove Last Workout" />
 </form>
-
+</th>
+<th>
+<form action="/" method="get">
+    <input type="submit" value="Home" />
+</form>
+</th>
+</table>
 {% if workouts %}
 <table style="width:100%">
 <tr>
