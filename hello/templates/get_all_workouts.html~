@@ -1,7 +1,4 @@
 {% load static %}
-<form action="/add_workout" method="get">
-    <input type="submit" value="Add Workout" />
-</form>
 {% if workouts %}
 <table style="width:75%">
 <tr>
@@ -26,4 +23,6 @@
 {% else %}
     <p>No workouts are available.</p>
 {% endif %}
-
+<form action="/add_workout" method="get">
+    <input type="submit" value="Add Workout" />
+</form>
