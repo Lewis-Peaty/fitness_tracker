@@ -1,9 +1,20 @@
+<style>
+    input {
+        width: 100%;
+        height: 10%;
+    }
+    
+    th{
+        height: 50px;
+    }
+</style>
+
 {% load static %}
 <form action="/add_workout" method="get">
     <input type="submit" value="Add Workout" />
 </form>
 {% if workouts %}
-<table style="width:75%">
+<table style="width:100%">
 <tr>
     <th>Name</th>
     <th>Time Stamp</th>

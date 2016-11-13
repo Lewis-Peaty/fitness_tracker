@@ -1,3 +1,11 @@
+<style>
+    .fieldWrapper {
+    height:10%;
+    width: 50%;
+    font-size: 200%;
+    }
+</style>
+
 <form action="/add_workout" method="post">
     {% csrf_token %}
     {% for field in form %}

@@ -1,4 +1,11 @@
-<form action="/hello/add_workout" method="post">
+<style>
+    .fieldWrapper {
+    height:10%;
+    width: 50%;
+    }
+</style>
+
+<form action="/add_workout" method="post">
     {% csrf_token %}
     {% for field in form %}
         <div class="fieldWrapper">
