@@ -1,0 +1,22 @@
+<style>
+.city {
+    float: left;
+    margin: 1%;
+    padding: 1%;
+    max-width: 100%;
+    height: 70%;
+    width: 100%;
+}
+
+input {
+    width: 100%;
+}
+</style>
+<div class="city">
+    <form action="/get_all_workouts" method="get">
+        <input style="color:red" type="submit" value="Previous Workouts" />
+    </form>
+    <form action="/add_workout" method="get">
+        <input type="submit" value="Add Workout" />
+    </form>
+<div class="city">
