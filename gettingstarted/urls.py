@@ -15,4 +15,5 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^get_all_workouts$',hello.views.get_all_workouts, name='get_all_workouts'),
     url(r'^add_workout$',hello.views.add_workout, name='add_workout'),
+    url(r'^remove_workout$',hello.views.remove_workout, name='remove_workout'),
 ]

@@ -16,6 +16,10 @@
 <form action="/add_workout" method="get">
     <input type="submit" value="Add Workout" />
 </form>
+<form action="/remove_workout" method="get">
+    <input type="submit" value="Remove Last Workout" />
+</form>
+
 {% if workouts %}
 <table style="width:100%">
 <tr>
@@ -40,4 +44,3 @@
 {% else %}
     <p>No workouts are available.</p>
 {% endif %}
-

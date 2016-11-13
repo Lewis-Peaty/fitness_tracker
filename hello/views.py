@@ -56,5 +56,31 @@ def add_workout(request):
         form = WorkoutForm()
 
     return render(request, 'new_workout.html', {'form': form})
-
+    
+def remove_workout(request):
+    Workout.objects.latest('time_stamp').delete()
+    return HttpResponseRedirect('/get_all_workouts')
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
