@@ -49,7 +49,7 @@ def add_workout(request):
             # ...
             # redirect to a new URL:
             form.save()
-            return HttpResponseRedirect('/hello/get_all_workouts')
+            return HttpResponseRedirect('/get_all_workouts')
 
     # if a GET (or any other method) we'll create a blank form
     else:
